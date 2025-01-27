@@ -16,12 +16,11 @@ function Navbar() {
     <div>
       <nav className="navsection">
         <ul>
-           
-          <NavLink
+        <NavLink
             style={(item) => {
               return styleObject(item);
             }}
-            to="/signup"
+            to="/register"
           >
             <li>Signup</li>
           </NavLink>
@@ -32,6 +31,14 @@ function Navbar() {
             to="/"
           >
             <li>Login</li>
+          </NavLink>
+          <NavLink
+            style={(item) => {
+              return styleObject(item);
+            }}
+            to="/products"
+          >
+            <li>Products</li>
           </NavLink>
         
           <NavLink

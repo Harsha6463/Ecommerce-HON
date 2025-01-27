@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import API from '../api';
 import { toast } from 'react-toastify';
-// import { useNavigate } from 'react-router-dom';
+// import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({ mobileNo: '', password: '' });
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,16 +14,17 @@ const Login = () => {
       const { data } = await API.post('/login', formData);
       localStorage.setItem('token', data.token);
       toast.success('Login successful!');
-      // navigate('/dashboard');
+      navigate('/products');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Error during login');
     }
   };
 
   return (
-
+<div className='App'>
      <form onSubmit={handleSubmit}>
-  
+  {/* <Navbar></Navbar> */}
+  <h1>Login</h1>
   <div>
     <label>mobileNo :</label>
       <input
@@ -47,6 +49,7 @@ const Login = () => {
       <button type="submit">Login</button>
       </div>
     </form>
+    </div>
   );
 };
 

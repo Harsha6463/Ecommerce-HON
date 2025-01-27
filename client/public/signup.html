@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Optional: External CSS -->
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Signup Form</h2>
+    <form id="signup-form">
+      <label for="mobile-number">Mobile Number</label>
+      <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter your mobile number" required pattern="[0-9]{10}" />
+      <small>Enter a valid 10-digit mobile number</small>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6" />
+      <small>Password must be at least 6 characters long</small>
+
+      <button type="submit">Signup</button>
+    </form>
+
+    <p>Already have an account? <a href="/login.html">Login</a></p>
+  </div>
+
+  <script src="signup.js"></script> 
+</body>
+</html>

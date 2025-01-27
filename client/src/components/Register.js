@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import API from '../api';
 import { toast } from 'react-toastify';
 
+
 const Register = () => {
   const [formData, setFormData] = useState({  mobileNo: '', password: '' });
 
@@ -16,7 +17,10 @@ const Register = () => {
   };
 
   return (
+    <div className='App'>
     <form onSubmit={handleSubmit}>
+      <h1>Register User</h1>
+      {/* <Navbar></Navbar> */}
     <div>
       <label>MobileNo :</label>
       <input
@@ -42,6 +46,7 @@ const Register = () => {
       <button type="submit">Register</button>
       </div>
     </form>
+    </div>
   );
 };
 

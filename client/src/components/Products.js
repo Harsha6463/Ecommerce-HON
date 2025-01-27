@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { addToCart, removeFromCart } from './Cart';
 import Sidebar from './Sidebar';
+// import Navbar from "./Navbar";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const Products = () => {
   const [products, setProducts] = useState([]);  
@@ -9,6 +11,7 @@ const Products = () => {
   const [search, setSearch] = useState("");  
   const [cartItems, setCartItems] = useState([]);  
   const [isCartVisible, setIsCartVisible] = useState(false);  
+  
 
   const productsRef = useRef(null);  
 
@@ -58,6 +61,7 @@ const Products = () => {
 
   return (
     <div>
+      {/* <Navbar></Navbar> */}
       <Sidebar onSelect={filterProducts} cartLength={cartItems.length} />
 
       <div className="products-page">
@@ -72,8 +76,12 @@ const Products = () => {
             onChange={Search}
           />
 
-          
          
+          <div className="auth-links">
+            <Link to="/" className="auth-link">Login</Link>
+            <Link to="/register" className="auth-link">Signup</Link>
+          </div>
+
           <a href="#cart-section" className="cart-link" onClick={cart}>
             Cart ({cartItems.length})
           </a>

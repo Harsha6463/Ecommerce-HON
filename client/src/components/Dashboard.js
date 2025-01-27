@@ -5,7 +5,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const Logout = () => {
-    navigate('/login');
+    navigate('/products');
   };
 
   return (
