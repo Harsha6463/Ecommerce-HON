@@ -10,5 +10,11 @@ router.get('/products/getproducts', userController.getProducts);
 router.get('/products/:productType', userController.getproductstype);
 
 
+// user Routes 
+
+router.post('/signup',userController.createUser)
+router.post('/login',userController.loginUser)
+
+
 
 export default router; 

@@ -8,6 +8,48 @@ body {
 
 
 
+.header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center; 
+}
+
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.add {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.add:hover {
+  background-color: #45a049;
+}
+
 
 .header {
   position: fixed;
@@ -19,6 +61,7 @@ body {
   z-index: 1;
   padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
 }
 
 
@@ -39,7 +82,7 @@ body {
 .search-input {
   position: absolute;
   left: 850px;
-  top: 50px;
+  top: 40px;
   padding: 10px;
   width: 200px;
   border: 1px solid #ccc;
@@ -76,9 +119,10 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(5, minmax(150px, 2fr));
   gap: 20px;
-  margin-top: 20px;
+
+ 
   
 }
 
@@ -88,6 +132,7 @@ body {
   border-radius: 10px;
   padding: 20px;
   text-align: left;
+  margin-top: 45px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -147,16 +192,7 @@ b {
   transition: background-color 0.3s;
 }
 
-/* .search-input {
-  padding: 5px;
-  margin-bottom: 20px;
-  max-width: 400px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-} */
+
 
 .search-input:focus {
   outline: none;
@@ -369,8 +405,11 @@ li:hover{
 
 .cart-link {
   padding: 10px 20px; 
-  background-color: #007bff; 
-  color: white; 
+  position: relative;
+  left: 500px;
+  bottom: 50px;
+  background-color: #007bff;
+ color: #fff;
   text-decoration: none; 
   border-radius: 5px; 
   font-weight: bold; 
@@ -379,7 +418,53 @@ li:hover{
   transition: background-color 0.3s ease; 
   margin-left: 10px;
 }
+a:hover{
+  background-color: rgba(6, 95, 16, 0.934);
+  
+}
 
-.cart-link:hover {
-  background-color: rgb(8, 143, 8)
+
+
+
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  text-align: center;
+  display: inline-block;
+
+}
+input{
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+
+}
+form label {
+  display: inline-block;
+  width: 150px;
+  color: #007bff;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+.btn{
+  text-align: center;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { addToCart, removeFromCart } from './Cart';
-import Sidebar from './Sidebar';  
+import Sidebar from './Sidebar';
 
 const Products = () => {
   const [products, setProducts] = useState([]);  
@@ -41,7 +41,6 @@ const Products = () => {
       setFilteredProducts(filtered);  
     }
 
-    
     if (productsRef.current) {
       productsRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -65,10 +64,6 @@ const Products = () => {
         <div className="header">
           <h1 style={{color:"black"}} className="text-size">E-Commerce</h1>
 
-          <div className="cart-summary">
-            <p>Total Items in Cart: {cartItems.length}</p> 
-          </div>
-
           <input
             type="text"
             className="search-input"
@@ -77,6 +72,8 @@ const Products = () => {
             onChange={Search}
           />
 
+          
+         
           <a href="#cart-section" className="cart-link" onClick={cart}>
             Cart ({cartItems.length})
           </a>
@@ -100,9 +97,6 @@ const Products = () => {
                 <p>
                   <b>Category: </b>{product.category}
                 </p>
-                <p>
-                  <b>Description: </b>{product.description}
-                </p>
 
                 <button
                   className="add"
@@ -117,11 +111,10 @@ const Products = () => {
           )}
         </div>
 
-       
         {isCartVisible && (
           <div className="cart" id="cart-section">
             <h2>Shopping Cart</h2>
-            <p>Total Items in Cart: {cartItems.length}</p> 
+            <p>Total Items in Cart : {cartItems.length}</p> 
             {cartItems.length > 0 ? (
               <div>
                 {cartItems.map((item) => (
