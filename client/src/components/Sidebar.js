@@ -1,27 +1,23 @@
 import React, { useState } from "react";
 
-
-const Sidebar = ({ onSelect }) => {
+const Sidebar = ({ onSelect, cartLength }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const sidebar = () => {
     setIsOpen(!isOpen);
   };
 
+  const cartClass = cartLength > 0 ? 'cart-active' : 'cart-empty';
+
   return (
     <div>
       <div className={`color ${isOpen ? 'active' : ''}`} onClick={sidebar}></div>
 
       {!isOpen && (
-        
-        <div className="dots" onClick={sidebar}>
-          &#8942;
-        </div>
+        <div className="bar" onClick={sidebar}></div> 
       )}
 
       {isOpen && (
-        
-  
         <div className="sidebar">
           <div className="sidebar-style">
             <h3>Shop Categories</h3>
@@ -39,7 +35,9 @@ const Sidebar = ({ onSelect }) => {
             <li onClick={() => onSelect("Menswear")}>Menswear</li>
             <li onClick={() => onSelect("mobile")}>Mobiles</li>
             <li onClick={() => onSelect("womenswear")}>Womenswear</li>
-            <li onClick={() => onSelect("cart")}>Cart Items</li>
+            <li onClick={() => onSelect("cart")} className={cartClass}>
+              Cart Items {cartLength > 0 && `(${cartLength})`}
+            </li>
           </ul>
         </div>
       )}
