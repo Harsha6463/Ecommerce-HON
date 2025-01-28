@@ -3,7 +3,7 @@ import axios from "axios";
 import { addToCart, removeFromCart } from './Cart';
 import Sidebar from './Sidebar';
 // import Navbar from "./Navbar";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; 
 
 const Products = () => {
   const [products, setProducts] = useState([]);  
