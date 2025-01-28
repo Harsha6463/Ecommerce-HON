@@ -19,9 +19,10 @@ function App() {
       <Router>
       <ToastContainer></ToastContainer>
         <Routes>
+        <Route path="/" element={<Login />} />
           <Route  path="/products" element={<Products />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
+       
           <Route path='/dashboard' element={<Dashboard></Dashboard>}>Dash Board</Route>
         </Routes>
       </Router>

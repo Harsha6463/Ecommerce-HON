@@ -80,12 +80,15 @@ const Products = () => {
           <div className="auth-links">
             <Link to="/" className="auth-link">Login</Link>
             <Link to="/register" className="auth-link">Signup</Link>
+            <Link to="/dashboard" className="auth-link">Logout</Link>
           </div>
 
           <a href="#cart-section" className="cart-link" onClick={cart}>
             Cart ({cartItems.length})
           </a>
+         
         </div>
+     
 
         <div className="grid" ref={productsRef}> 
           {filteredProducts.length > 0 ? (
@@ -126,9 +129,9 @@ const Products = () => {
             {cartItems.length > 0 ? (
               <div>
                 {cartItems.map((item) => (
-                  <div key={item._id} className="App">
+                  <div key={item._id} className="cart">
                     <img src={item.image} alt={item.model} className="image" />
-                    <p><b>Model: </b>{item.model}</p>
+                    <p ><b>Model: </b>{item.model}</p>
                     <p><b>Price: </b>{item.price}</p>
                     <p><b>Category: </b>{item.category}</p>
                     <p><b>Description: </b>{item.description}</p>
